@@ -103,13 +103,17 @@ const renderPublications = (publications) => {
 };
 
 const loadSite = async () => {
+  byId("year").textContent = new Date().getFullYear();
+
   const [profileResponse, publicationsResponse] = await Promise.all([
     fetch(profileUrl),
     fetch(publicationsUrl)
   ]);
 
   if (!profileResponse.ok || !publicationsResponse.ok) {
-    throw new Error("Unable to load site data.");
+    throw new Error(
+      `Unable to load site data: profile ${profileResponse.status}, publications ${publicationsResponse.status}.`
+    );
   }
 
   const [profile, publications] = await Promise.all([
@@ -119,10 +123,13 @@ const loadSite = async () => {
 
   renderProfile(profile);
   renderPublications(publications);
-  byId("year").textContent = new Date().getFullYear();
 };
 
 loadSite().catch((error) => {
   console.error(error);
-  byId("profile-bio").textContent = "Profile data could not be loaded.";
+  const fileHint =
+    window.location.protocol === "file:"
+      ? " Please open the site through a local server instead of opening index.html directly."
+      : "";
+  byId("profile-bio").textContent = `Profile data could not be loaded.${fileHint}`;
 });
