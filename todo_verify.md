@@ -7,11 +7,6 @@ These items were not published, or were published only as externally linked prof
 - Source: https://gc.sjtu.edu.cn/off-the-press/2025-10-29/157569/
 - Note: The official SJTU Global College article includes an image next to Jiace Zhu's student introduction. It likely identifies him, but reuse and hotlinking permission are not explicit. The site uses a restrained initials placeholder instead.
 
-## Public Email
-
-- Source: https://openreview.net/profile?id=~Jiace_Zhu1
-- Note: OpenReview confirms an `sjtu.edu.cn` email but masks the address. No full public email address was found with enough confidence to publish.
-
 ## ORCID
 
 - Source checked: DBLP and OpenReview-linked profile pages.

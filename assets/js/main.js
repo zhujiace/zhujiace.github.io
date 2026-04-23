@@ -17,7 +17,7 @@ const renderProfile = (profile) => {
   document.title = profile.name;
   byId("profile-bio").textContent = profile.bio;
 
-  const primaryLinks = profile.links.slice(0, 4);
+  const primaryLinks = profile.links.slice(0, 5);
   const profileLinks = byId("profile-links");
   const contactLinks = byId("contact-links");
 
@@ -53,13 +53,6 @@ const renderProfile = (profile) => {
     return entry;
   });
   byId("education-list").replaceChildren(...educationNodes);
-
-  const interests = profile.researchInterests.map((interest) => {
-    const item = document.createElement("li");
-    item.textContent = interest;
-    return item;
-  });
-  byId("research-interests").replaceChildren(...interests);
 
   const honors = profile.honors.map((honor) => {
     const entry = document.createElement("article");
@@ -105,9 +98,7 @@ const publicationNode = (publication) => {
 
 const renderPublications = (publications) => {
   const sorted = [...publications].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
-  const selected = sorted.filter((publication) => publication.selected);
 
-  byId("selected-list").replaceChildren(...selected.map(publicationNode));
   byId("publication-list").replaceChildren(...sorted.map(publicationNode));
 };
 

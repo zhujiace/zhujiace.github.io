@@ -16,6 +16,7 @@
 | https://scholar.google.com.hk/citations?hl=zh-CN&user=91nlQ9kAAAAJ | Google Scholar profile linked from OpenReview | Medium | Google Scholar URL linked from verified OpenReview profile; page could not be fully fetched by the browser tool. | Yes, as a profile link |
 | https://dblp.org/pid/386/8010 | DBLP profile linked from OpenReview | High | DBLP URL linked from verified OpenReview profile. | Yes |
 | https://www.linkedin.com/in/jiace-zhu | LinkedIn URL linked from OpenReview | Medium | LinkedIn profile link from verified OpenReview profile; page content not independently inspected due fetch limitations. | Yes, as a profile link |
+| User-provided correction in local editing session, 2026-04-23 | Direct owner-provided information | High | Undergraduate major: Computer Science and Technology; public contact emails: zhujiace@sjtu.edu.cn and zhujiace020612@gmail.com; CUDABench repository is hosted under the CUDA-Bench organization account but managed by Jiace Zhu. | Yes |
 
 ## Identity Resolution Notes
 

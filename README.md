@@ -43,7 +43,6 @@ Common fields:
 - `name`, `chineseName`, `username`
 - `role`, `affiliation`, `department`
 - `bio`
-- `researchInterests`
 - `education`
 - `honors`
 - `links`
@@ -61,17 +60,16 @@ Each publication supports:
 - `venue`
 - `year`
 - `status`
-- `selected`
 - `links`
 
-The JavaScript automatically bolds `Jiace Zhu` in author lists, renders selected publications near the top, and sorts the full list by year descending.
+The JavaScript automatically bolds `Jiace Zhu` in author lists and sorts publications by year descending.
 
 ## Excluded Or Deferred Facts
 
 The public site intentionally excludes:
 
 - A profile photo, because an official SJTU article contains a likely photo but reuse permission was not clear enough to copy or hotlink it.
-- ORCID, CV PDF, and public email address, because no confidently verified public target suitable for display was found.
+- ORCID and CV PDF, because no confidently verified public target suitable for display was found.
 - Any awards beyond the ESWEEK 2025 ESSC third-place result, because no other reliable source was found during this pass.
 
 See `todo_verify.md` for verification notes.

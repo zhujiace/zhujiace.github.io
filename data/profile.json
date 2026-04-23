@@ -11,13 +11,7 @@
     "type": "placeholder",
     "alt": "Initials placeholder for Jiace Zhu"
   },
-  "bio": "Jiace Zhu is a Ph.D. student at Shanghai Jiao Tong University Global College, working with Prof. An Zou. His public research record focuses on efficient large language model inference, GPU-oriented benchmarking, and real-time computing on heterogeneous architectures.",
-  "researchInterests": [
-    "Efficient large language model inference",
-    "GPU computing and benchmarking",
-    "Real-time systems on heterogeneous architectures",
-    "System optimization for emerging workloads"
-  ],
+  "bio": "Jiace Zhu is a Ph.D. student at Shanghai Jiao Tong University Global College, working with Prof. An Zou. His research focuses on efficient systems for emerging AI and real-time workloads, including large language model inference, CUDA kernel generation, GPU benchmarking, and real-time scheduling on heterogeneous architectures. He manages the CUDABench repository, which is hosted under the CUDA-Bench organization account.",
   "education": [
     {
       "degree": "Ph.D. in Electronic Science and Technology",
@@ -26,7 +20,7 @@
       "period": "2024-Present"
     },
     {
-      "degree": "B.Eng.",
+      "degree": "B.Eng. in Computer Science and Technology",
       "institution": "Tongji University",
       "school": "College of Electronics and Information Engineering",
       "period": "2020-2024"
@@ -41,6 +35,14 @@
     }
   ],
   "links": [
+    {
+      "label": "Email",
+      "url": "mailto:zhujiace@sjtu.edu.cn"
+    },
+    {
+      "label": "Gmail",
+      "url": "mailto:zhujiace020612@gmail.com"
+    },
     {
       "label": "Google Scholar",
       "url": "https://scholar.google.com.hk/citations?hl=zh-CN&user=91nlQ9kAAAAJ"
@@ -58,7 +60,7 @@
       "url": "https://www.linkedin.com/in/jiace-zhu"
     },
     {
-      "label": "CUDABench",
+      "label": "CUDABench Repository",
       "url": "https://github.com/CUDA-Bench/CUDABench"
     }
   ]
