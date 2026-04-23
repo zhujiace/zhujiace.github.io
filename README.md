@@ -19,6 +19,12 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+If Python is not installed on Windows, use the included PowerShell server:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\serve.ps1 -Port 8000
+```
+
 The page fetches JSON data, so viewing `index.html` directly from the filesystem may not load all content in some browsers.
 
 ## Deploy To GitHub Pages

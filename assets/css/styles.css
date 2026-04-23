@@ -259,7 +259,7 @@ h3 {
 
 .interest-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 14px;
   padding: 0;
   margin: 0;
@@ -267,12 +267,15 @@ h3 {
 }
 
 .interest-grid li {
-  min-height: 108px;
+  display: grid;
+  min-height: 116px;
+  place-items: center;
   padding: 18px;
   border: 1px solid rgba(53, 92, 74, 0.14);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.54);
   font-weight: 650;
+  text-align: center;
 }
 
 .publication-list {
@@ -411,8 +414,7 @@ h3 {
     font-size: 3.2rem;
   }
 
-  .two-column,
-  .interest-grid {
+  .two-column {
     grid-template-columns: 1fr;
   }
 
