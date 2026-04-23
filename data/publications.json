@@ -1,0 +1,112 @@
+[
+  {
+    "title": "CUDABench: Can LLMs Write Efficient CUDA Kernels?",
+    "authors": [
+      "Jiace Zhu",
+      "Yuhong Liu",
+      "Xin Zhang",
+      "Runhan Yang",
+      "Jiahao Guo",
+      "Zehan Wang",
+      "Yuhao Zhou",
+      "Huazhi Zhang",
+      "Chenyi Zhuang",
+      "Baolu Li",
+      "Ziming Mao",
+      "Xianglong Kong",
+      "Xiaopeng Li",
+      "Wei Chen",
+      "Peng Li",
+      "Yier Jin",
+      "An Zou"
+    ],
+    "venue": "arXiv preprint",
+    "status": "Preprint",
+    "year": 2026,
+    "selected": true,
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2603.02236"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/CUDA-Bench/CUDABench"
+      }
+    ]
+  },
+  {
+    "title": "CUDA-LLM: Improving LLMs' Capability for CUDA Kernel Generation",
+    "authors": [
+      "Yuhong Liu",
+      "Jiace Zhu",
+      "Xin Zhang",
+      "Runhan Yang",
+      "Yuhao Zhou",
+      "Jiahao Guo",
+      "Zehan Wang",
+      "Hongyi Zhang",
+      "Chenyi Zhuang",
+      "Baolu Li",
+      "Ziming Mao",
+      "Xianglong Kong",
+      "Wei Chen",
+      "Peng Li",
+      "Yier Jin",
+      "An Zou"
+    ],
+    "venue": "arXiv preprint",
+    "status": "Preprint",
+    "year": 2025,
+    "selected": false,
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2506.09092"
+      }
+    ]
+  },
+  {
+    "title": "RTHeter: Simulating Real-Time Scheduling of Multiple Tasks on Heterogeneous Architectures",
+    "authors": [
+      "Yinchen Ni",
+      "Jiace Zhu",
+      "Yier Jin",
+      "An Zou"
+    ],
+    "venue": "Design, Automation & Test in Europe Conference & Exhibition (DATE)",
+    "status": "Conference paper",
+    "year": 2025,
+    "selected": true,
+    "links": [
+      {
+        "label": "DBLP",
+        "url": "https://dblp.org/rec/conf/date/NiZJZ25"
+      },
+      {
+        "label": "Project",
+        "url": "https://sites.gc.sjtu.edu.cn/zouan/research/real-time-computing-on-gpu-fpga-heterogeneous-architectures/real-time-computing-on-gpu-fpga-heterogeneous-architectures-demos/"
+      }
+    ]
+  },
+  {
+    "title": "Path-Consistency with Prefix Enhancement for Efficient Inference in LLMs",
+    "authors": [
+      "Jiace Zhu",
+      "Aojun Zhou",
+      "Yuanzhe Xie",
+      "Boyi Guo",
+      "An Zou"
+    ],
+    "venue": "arXiv preprint",
+    "status": "Preprint",
+    "year": 2024,
+    "selected": true,
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2409.01281"
+      }
+    ]
+  }
+]

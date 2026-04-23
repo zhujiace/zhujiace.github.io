@@ -1,0 +1,65 @@
+{
+  "name": "Jiace Zhu",
+  "chineseName": "\u6731\u5609\u7b56",
+  "username": "zhujiace",
+  "role": "Ph.D. Student",
+  "affiliation": "Shanghai Jiao Tong University Global College",
+  "department": "Electronic Science and Technology",
+  "location": "Shanghai, China",
+  "advisor": "An Zou",
+  "photo": {
+    "type": "placeholder",
+    "alt": "Initials placeholder for Jiace Zhu"
+  },
+  "bio": "Jiace Zhu is a Ph.D. student at Shanghai Jiao Tong University Global College, working with Prof. An Zou. His public research record focuses on efficient large language model inference, GPU-oriented benchmarking, and real-time computing on heterogeneous architectures.",
+  "researchInterests": [
+    "Efficient large language model inference",
+    "GPU computing and benchmarking",
+    "Real-time systems on heterogeneous architectures",
+    "System optimization for emerging workloads"
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Electronic Science and Technology",
+      "institution": "Shanghai Jiao Tong University",
+      "school": "Shanghai Jiao Tong University Global College",
+      "period": "2024-Present"
+    },
+    {
+      "degree": "B.Eng.",
+      "institution": "Tongji University",
+      "school": "College of Electronics and Information Engineering",
+      "period": "2020-2024"
+    }
+  ],
+  "honors": [
+    {
+      "title": "Third Place, Embedded System Software Design Contest",
+      "organization": "ESWEEK 2025",
+      "year": "2025",
+      "description": "Team project: RTHeter, with Yinchen Ni, Jiace Zhu, and Xingzhe Cai."
+    }
+  ],
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com.hk/citations?hl=zh-CN&user=91nlQ9kAAAAJ"
+    },
+    {
+      "label": "DBLP",
+      "url": "https://dblp.org/pid/386/8010"
+    },
+    {
+      "label": "OpenReview",
+      "url": "https://openreview.net/profile?id=~Jiace_Zhu1"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jiace-zhu"
+    },
+    {
+      "label": "CUDABench",
+      "url": "https://github.com/CUDA-Bench/CUDABench"
+    }
+  ]
+}
