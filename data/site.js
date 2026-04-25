@@ -20,7 +20,13 @@
       "alt": "Jiace Zhu"
     },
     "bio": [
-      "I am a Ph.D. student at Global College, Shanghai Jiao Tong University, advised by Prof. An Zou in the Efficient Computing Hardware and System Lab. I received my B.E. degree in Computer Science and Technology from Tongji University in 2024.",
+      [
+        "I am a Ph.D. student at ",
+        { "label": "Global College", "href": "https://gc.sjtu.edu.cn/" },
+        ", Shanghai Jiao Tong University, advised by Prof. An Zou in the ",
+        { "label": "Efficient Computing Hardware and System Lab (ECHSL)", "href": "https://sites.gc.sjtu.edu.cn/zouan/" },
+        ". I received my B.E. degree in Computer Science and Technology from Tongji University in 2024."
+      ],
       "My research lies in efficient AI systems and hardware-aware computing, with a focus on LLM-driven GPU programming, efficient LLM inference, real-time scheduling on heterogeneous architectures, and neural network compression for resource-constrained deployment."
     ],
     "links": [
@@ -172,8 +178,7 @@
         ],
         "venue": "DATE, 2025",
         "links": [
-          { "label": "DBLP", "href": "https://dblp.org/rec/conf/date/NiZJZ25" },
-          { "label": "Project", "href": "https://sites.gc.sjtu.edu.cn/zouan/research/real-time-computing-on-gpu-fpga-heterogeneous-architectures/real-time-computing-on-gpu-fpga-heterogeneous-architectures-demos/" }
+          { "label": "DBLP", "href": "https://dblp.org/rec/conf/date/NiZJZ25" }
         ],
         "detail": {
           "heading": "Main idea",

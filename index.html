@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Academic homepage of Jiace Zhu, Ph.D. student at Shanghai Jiao Tong University.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Jiace Zhu | Academic Homepage</title>
     <style>
       :root {
@@ -360,6 +361,13 @@
         return node;
       };
 
+      const appendRichText = (node, value) => {
+        const parts = Array.isArray(value) ? value : [value];
+        parts.forEach((part) => {
+          node.append(typeof part === "string" ? document.createTextNode(part) : link(part));
+        });
+      };
+
       const renderSectionShell = (section, titleId) => {
         const grid = el("div", "section-grid");
         const aside = el("div");
@@ -378,7 +386,11 @@
           const li = el("li", "entry");
           const text = el("div");
           text.append(el("p", "entry-title", item.title));
-          item.meta.forEach((line) => text.append(el("p", "entry-meta", line)));
+          item.meta.forEach((line) => {
+            const meta = el("p", "entry-meta");
+            appendRichText(meta, line);
+            text.append(meta);
+          });
           li.append(text, el("span", "entry-time", item.time));
           list.append(li);
         });
@@ -441,7 +453,11 @@
         chineseName.lang = "zh-Hans";
         name.append(chineseName);
         heroText.append(name);
-        data.profile.bio.forEach((line) => heroText.append(el("p", "lead", line)));
+        data.profile.bio.forEach((line) => {
+          const paragraph = el("p", "lead");
+          appendRichText(paragraph, line);
+          heroText.append(paragraph);
+        });
         const profileLinks = el("div", "links");
         profileLinks.setAttribute("aria-label", "Profile links");
         data.profile.links.forEach((item) => profileLinks.append(link(item, item.primary ? "button primary" : "button")));
