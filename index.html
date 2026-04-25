@@ -3,83 +3,532 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Academic homepage of Jiace Zhu, Ph.D. student at Shanghai Jiao Tong University Global College.">
-    <title>Jiace Zhu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Academic homepage of Jiace Zhu, Ph.D. student at Shanghai Jiao Tong University.">
+    <title>Jiace Zhu | Academic Homepage</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #202124;
+        --muted: #5f6368;
+        --line: #d9dde3;
+        --soft: #f6f7f9;
+        --paper: #ffffff;
+        --accent: #0b5cad;
+        --accent-dark: #083f76;
+        --warm: #a24f1f;
+        --max: 980px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Noto Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--accent-dark);
+        text-decoration: underline;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 14px 24px;
+      }
+
+      .brand {
+        color: var(--ink);
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+      }
+
+      main {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 24px 56px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 44px;
+        align-items: center;
+        padding: 58px 0 42px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--warm);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        font-size: 42px;
+        line-height: 1.15;
+        letter-spacing: 0;
+      }
+
+      h1 span {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      .lead {
+        max-width: 760px;
+        color: #34383d;
+        font-size: 18px;
+      }
+
+      .portrait {
+        display: grid;
+        width: 180px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(11, 92, 173, 0.10), rgba(162, 79, 31, 0.10)),
+          repeating-linear-gradient(45deg, transparent 0 14px, rgba(32, 33, 36, 0.035) 14px 15px);
+      }
+
+      .portrait span {
+        color: var(--accent-dark);
+        font-size: 44px;
+        font-weight: 800;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        padding: 7px 13px;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        background: var(--paper);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        color: #fff;
+        background: var(--accent);
+      }
+
+      .button:hover {
+        text-decoration: none;
+        border-color: var(--accent);
+      }
+
+      section {
+        padding: 34px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 34px;
+      }
+
+      .section-kicker {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 28px;
+        margin: 22px 0 0;
+      }
+
+      .fact dt {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .fact dd {
+        margin: 2px 0 0;
+      }
+
+      .pub-list,
+      .plain-list {
+        display: grid;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .publication {
+        padding-bottom: 18px;
+        border-bottom: 1px solid #eceff3;
+      }
+
+      .publication:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .pub-title {
+        margin-bottom: 4px;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .authors {
+        margin-bottom: 3px;
+        color: #3b3f44;
+      }
+
+      .authors strong {
+        font-weight: 800;
+      }
+
+      .venue {
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .pub-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pub-links a {
+        display: inline-flex;
+        min-height: 30px;
+        align-items: center;
+        border: 1px solid var(--line);
+        padding: 3px 10px;
+        color: var(--accent-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .pub-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+
+      .note {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .plain-list li {
+        position: relative;
+        padding-left: 16px;
+      }
+
+      .plain-list li::before {
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        content: "";
+        width: 6px;
+        height: 6px;
+        top: 0.72em;
+        background: var(--accent);
+      }
+
+      .contact-box {
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: var(--soft);
+      }
+
+      .site-footer {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .hero,
+        .section-grid,
+        .facts {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          gap: 26px;
+          padding-top: 36px;
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+
+        .portrait {
+          width: 142px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="wordmark" href="#top">Jiace Zhu</a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="#top">Jiace Zhu</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#honors">Honors</a>
+          <a href="#misc">Misc</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero section-pad" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Ph.D. Student &middot; Shanghai Jiao Tong University</p>
-          <h1 id="hero-title">Jiace Zhu <span lang="zh-Hans">&#x6731;&#x5609;&#x7b56;</span></h1>
-          <p class="lead" id="profile-bio">Loading verified profile...</p>
-          <div class="link-row" id="profile-links" aria-label="Profile links"></div>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Ph.D. Student · Shanghai Jiao Tong University</p>
+          <h1 id="page-title">Jiace Zhu <span lang="zh-Hans">朱嘉策</span></h1>
+          <p class="lead">
+            I am a Ph.D. student at Global College, Shanghai Jiao Tong University, advised by Prof. An Zou in the Efficient Computing Hardware and System Lab. I received my B.E. degree in Computer Science and Technology from Tongji University in 2024.
+          </p>
+          <p class="lead">
+            My research lies in efficient AI systems and hardware-aware computing, with a focus on LLM-driven GPU programming, efficient LLM inference, real-time scheduling on heterogeneous architectures, and neural network compression for resource-constrained deployment.
+          </p>
+          <div class="links" aria-label="Profile links">
+            <a class="button primary" href="mailto:zhujiace@sjtu.edu.cn">Email</a>
+            <a class="button" href="https://github.com/zhujiace/">GitHub</a>
+            <a class="button" href="https://scholar.google.com/citations?user=91nlQ9kAAAAJ">Google Scholar</a>
+            <a class="button" href="https://www.linkedin.com/in/jiace-zhu-371545320/">LinkedIn</a>
+          </div>
         </div>
         <div class="portrait" aria-hidden="true">
           <span>JZ</span>
         </div>
       </section>
 
-      <section class="section section-pad" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Academic Profile</h2>
-        </div>
-        <div class="two-column">
+      <section id="about" aria-labelledby="about-title">
+        <div class="section-grid">
           <div>
-            <dl class="profile-facts" id="profile-facts"></dl>
+            <p class="eyebrow">About</p>
+            <p class="section-kicker">Academic profile</p>
           </div>
           <div>
-            <h3>Education</h3>
-            <div class="timeline" id="education-list"></div>
+            <h2 id="about-title">Research And Education</h2>
+            <p>
+              I work on the boundary between machine learning systems, programming models, and computer architecture. My recent projects study how large language models generate and optimize CUDA kernels, how inference can be made faster through path-level consistency, and how scheduling or compression methods can improve efficiency on constrained or heterogeneous platforms.
+            </p>
+            <dl class="facts">
+              <div class="fact">
+                <dt>Affiliation</dt>
+                <dd>Global College, Shanghai Jiao Tong University</dd>
+              </div>
+              <div class="fact">
+                <dt>Advisor</dt>
+                <dd>Prof. An Zou</dd>
+              </div>
+              <div class="fact">
+                <dt>Lab</dt>
+                <dd>Efficient Computing Hardware and System Lab</dd>
+              </div>
+              <div class="fact">
+                <dt>Education</dt>
+                <dd>B.E., Computer Science and Technology, Tongji University, 2024</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section class="section section-pad" id="publications" aria-labelledby="publications-title">
-        <div class="section-heading">
-          <p class="eyebrow">Bibliography</p>
-          <h2 id="publications-title">Publications</h2>
+      <section id="publications" aria-labelledby="publications-title">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Publications</p>
+            <p class="section-kicker">Selected work</p>
+          </div>
+          <div>
+            <h2 id="publications-title">Papers</h2>
+            <ul class="pub-list">
+              <li class="publication">
+                <div class="pub-title">CUDABench: Benchmarking LLMs for Text-to-CUDA Generation</div>
+                <div class="authors"><strong>Jiace Zhu</strong>, Wentao Chen, Qi Fan, Zhixing Ren, Junying Wu, Xing Zhe Chai, Chotiwit Rungrueangwutthinon, Yehan Ma, and An Zou</div>
+                <div class="venue">arXiv, 2026</div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2603.02236">Paper</a>
+                  <a href="https://github.com/CUDA-Bench/CUDABench">Code</a>
+                </div>
+              </li>
+              <li class="publication">
+                <div class="pub-title">CUDA-LLM: LLMs Can Write Efficient CUDA Kernels</div>
+                <div class="authors">Wentao Chen, <strong>Jiace Zhu</strong>, Qi Fan, Yehan Ma, and An Zou</div>
+                <div class="venue">arXiv, 2025</div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2506.09092">Paper</a>
+                </div>
+              </li>
+              <li class="publication">
+                <div class="pub-title">Path-Consistency with Prefix Enhancement for Efficient Inference in LLMs</div>
+                <div class="authors"><strong>Jiace Zhu</strong>, Yuanzhe Huang, Yingtao Shen, Jie Zhao, and An Zou</div>
+                <div class="venue">arXiv, 2024</div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2409.01281">Paper</a>
+                </div>
+              </li>
+              <li class="publication">
+                <div class="pub-title">RTHeter: Simulating Real-Time Scheduling of Multiple Tasks on Heterogeneous Architectures</div>
+                <div class="authors">Yinchen Ni, <strong>Jiace Zhu</strong>, Yier Jin, and An Zou</div>
+                <div class="venue">DATE, 2025</div>
+                <div class="pub-links">
+                  <a href="https://dblp.org/rec/conf/date/NiZJZ25">DBLP</a>
+                  <a href="https://sites.gc.sjtu.edu.cn/zouan/research/real-time-computing-on-gpu-fpga-heterogeneous-architectures/real-time-computing-on-gpu-fpga-heterogeneous-architectures-demos/">Project</a>
+                </div>
+              </li>
+              <li class="publication">
+                <div class="pub-title">Compression Space Search: RL-Based Combinational Compression for Neural Networks</div>
+                <div class="authors">Yingtao Shen, Yinchen Ni, <strong>Jiace Zhu</strong>, Jie Zhao, and An Zou</div>
+                <div class="venue">DATE, 2026</div>
+                <div class="pub-links">
+                  <a href="https://sites.gc.sjtu.edu.cn/zouan/research/embedded-ai-systems/embedded-ai-system-papers/">Lab</a>
+                </div>
+              </li>
+            </ul>
+            <p class="note">
+              Paper and code links are included only where the title and author list can be matched to Jiace Zhu with public sources.
+            </p>
+          </div>
         </div>
-        <div class="publication-list" id="publication-list"></div>
       </section>
 
-      <section class="section section-pad muted-band" id="awards" aria-labelledby="awards-title">
-        <div class="section-heading">
-          <p class="eyebrow">Recognition</p>
-          <h2 id="awards-title">Awards</h2>
+      <section id="honors" aria-labelledby="honors-title">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Honors</p>
+            <p class="section-kicker">Awards</p>
+          </div>
+          <div>
+            <h2 id="honors-title">Honors And Awards</h2>
+            <ul class="plain-list">
+              <li>ESWEEK 2025 Embedded System Software Competition third prize.</li>
+            </ul>
+          </div>
         </div>
-        <div class="honor-list" id="honor-list"></div>
       </section>
 
-      <section class="section section-pad contact" id="contact" aria-labelledby="contact-title">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Links</h2>
+      <section id="misc" aria-labelledby="misc-title">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Misc</p>
+            <p class="section-kicker">Earlier activities</p>
+          </div>
+          <div>
+            <h2 id="misc-title">Competitions</h2>
+            <ul class="plain-list">
+              <li>Physics: second prize in the Chinese Physics Olympiad provincial contest; second prize in the Shanghai division of the National College Student Physics Competition.</li>
+              <li>Intelligent vehicle: national second prize in the Baidu Intelligent Transportation creative group of the National University Student Intelligent Car Race.</li>
+            </ul>
+          </div>
         </div>
-        <p>For academic correspondence, project updates, and publication records, please use the links below.</p>
-        <div class="link-row large" id="contact-links" aria-label="Contact and profile links"></div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <p class="section-kicker">Get in touch</p>
+          </div>
+          <div class="contact-box">
+            <h2 id="contact-title">Links</h2>
+            <p>Email: <a href="mailto:zhujiace@sjtu.edu.cn">zhujiace@sjtu.edu.cn</a></p>
+            <div class="links">
+              <a class="button" href="https://github.com/zhujiace/">GitHub</a>
+              <a class="button" href="https://scholar.google.com/citations?user=91nlQ9kAAAAJ">Google Scholar</a>
+              <a class="button" href="https://www.linkedin.com/in/jiace-zhu-371545320/">LinkedIn</a>
+              <a class="button" href="https://dblp.org/pid/386/8010.html">DBLP</a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <span id="year"></span> Jiace Zhu. Built as a lightweight static academic homepage.</p>
+      Last updated April 2026 · © Jiace Zhu
     </footer>
-
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
