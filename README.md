@@ -2,6 +2,8 @@
 
 Static personal academic homepage for Jiace Zhu.
 
+Website: https://zhujiace.github.io/
+
 ## Structure
 
 - `index.html`: page layout, styling, and rendering script
