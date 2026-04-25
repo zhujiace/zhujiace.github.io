@@ -102,10 +102,9 @@
       .portrait {
         width: 300px;
         max-width: 100%;
-        aspect-ratio: 3 / 4;
+        height: auto;
         border: 1px solid var(--line);
-        object-fit: contain;
-        object-position: center bottom;
+        display: block;
         background: var(--soft);
       }
 
@@ -346,6 +345,7 @@
       <p class="footer-note" id="footer-note"></p>
     </footer>
 
+    <script src="data/site.js"></script>
     <script>
       const el = (tag, className, text) => {
         const node = document.createElement(tag);
@@ -505,13 +505,11 @@
         wirePaperToggles(data.publications);
       };
 
-      fetch("data/site.json")
-        .then((response) => response.json())
-        .then(renderSite)
-        .catch((error) => {
-          document.getElementById("hero").textContent = "Unable to load site data.";
-          console.error(error);
-        });
+      if (window.SITE_DATA) {
+        renderSite(window.SITE_DATA);
+      } else {
+        document.getElementById("hero").textContent = "Unable to load site data.";
+      }
     </script>
   </body>
 </html>

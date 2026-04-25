@@ -1,4 +1,4 @@
-{
+﻿window.SITE_DATA = {
   "site": {
     "title": "Jiace Zhu | Academic Homepage",
     "description": "Academic homepage of Jiace Zhu, Ph.D. student at Shanghai Jiao Tong University.",
@@ -16,7 +16,7 @@
     "name": "Jiace Zhu",
     "chineseName": "朱嘉策",
     "portrait": {
-      "src": "figs/myphoto2.jpg",
+      "src": "figs/myphoto3.jpg",
       "alt": "Jiace Zhu"
     },
     "bio": [
@@ -245,3 +245,4 @@
     { "label": "DBLP", "href": "https://dblp.org/pid/386/8010.html" }
   ]
 }
+;
