@@ -19,9 +19,7 @@
         --max: 980px;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       body {
         margin: 0;
@@ -32,15 +30,8 @@
         line-height: 1.65;
       }
 
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      a:hover {
-        color: var(--accent-dark);
-        text-decoration: underline;
-      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { color: var(--accent-dark); text-decoration: underline; }
 
       .site-header {
         position: sticky;
@@ -61,11 +52,7 @@
         padding: 14px 24px;
       }
 
-      .brand {
-        color: var(--ink);
-        font-weight: 700;
-        letter-spacing: 0;
-      }
+      .brand { color: var(--ink); font-weight: 700; letter-spacing: 0; }
 
       .nav-links {
         display: flex;
@@ -74,9 +61,7 @@
         font-size: 14px;
       }
 
-      .nav-links a {
-        color: var(--muted);
-      }
+      .nav-links a { color: var(--muted); }
 
       main {
         max-width: var(--max);
@@ -86,8 +71,8 @@
 
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 180px;
-        gap: 44px;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 48px;
         align-items: center;
         padding: 58px 0 42px;
         border-bottom: 1px solid var(--line);
@@ -102,35 +87,11 @@
         text-transform: uppercase;
       }
 
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-      }
-
-      h1 {
-        margin-bottom: 14px;
-        font-size: 42px;
-        line-height: 1.15;
-        letter-spacing: 0;
-      }
-
-      h1 span {
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      h2 {
-        margin-bottom: 18px;
-        font-size: 24px;
-        line-height: 1.25;
-      }
-
-      h3 {
-        margin-bottom: 8px;
-        font-size: 17px;
-      }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { margin-bottom: 14px; font-size: 42px; line-height: 1.15; letter-spacing: 0; }
+      h1 span { color: var(--muted); font-weight: 600; }
+      h2 { margin-bottom: 18px; font-size: 24px; line-height: 1.25; }
+      h3 { margin-bottom: 8px; font-size: 17px; }
 
       .lead {
         max-width: 760px;
@@ -139,20 +100,13 @@
       }
 
       .portrait {
-        display: grid;
-        width: 180px;
-        aspect-ratio: 1;
-        place-items: center;
+        width: 300px;
+        max-width: 100%;
+        aspect-ratio: 3 / 4;
         border: 1px solid var(--line);
-        background:
-          linear-gradient(135deg, rgba(11, 92, 173, 0.10), rgba(162, 79, 31, 0.10)),
-          repeating-linear-gradient(45deg, transparent 0 14px, rgba(32, 33, 36, 0.035) 14px 15px);
-      }
-
-      .portrait span {
-        color: var(--accent-dark);
-        font-size: 44px;
-        font-weight: 800;
+        object-fit: contain;
+        object-position: center bottom;
+        background: var(--soft);
       }
 
       .links {
@@ -202,26 +156,7 @@
         font-size: 14px;
       }
 
-      .facts {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 28px;
-        margin: 22px 0 0;
-      }
-
-      .fact dt {
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      .fact dd {
-        margin: 2px 0 0;
-      }
-
-      .pub-list,
-      .plain-list {
+      .entry-list, .pub-list, .plain-list {
         display: grid;
         gap: 18px;
         margin: 0;
@@ -229,14 +164,33 @@
         list-style: none;
       }
 
+      .entry-list + h2 { margin-top: 30px; }
+
+      .entry {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #eceff3;
+      }
+
+      .entry:last-child { padding-bottom: 0; border-bottom: 0; }
+      .entry-title { margin: 0 0 3px; font-weight: 700; line-height: 1.35; }
+      .entry-meta { margin: 0; color: var(--muted); font-size: 14px; }
+      .entry-time { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
       .publication {
         padding-bottom: 18px;
         border-bottom: 1px solid #eceff3;
       }
 
-      .publication:last-child {
-        padding-bottom: 0;
-        border-bottom: 0;
+      .publication:last-child { padding-bottom: 0; border-bottom: 0; }
+
+      .pub-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 14px;
+        align-items: start;
       }
 
       .pub-title {
@@ -246,20 +200,9 @@
         line-height: 1.35;
       }
 
-      .authors {
-        margin-bottom: 3px;
-        color: #3b3f44;
-      }
-
-      .authors strong {
-        font-weight: 800;
-      }
-
-      .venue {
-        margin-bottom: 8px;
-        color: var(--muted);
-        font-size: 14px;
-      }
+      .authors { margin-bottom: 3px; color: #3b3f44; }
+      .authors strong { font-weight: 800; }
+      .venue { margin-bottom: 8px; color: var(--muted); font-size: 14px; }
 
       .pub-links {
         display: flex;
@@ -283,10 +226,51 @@
         text-decoration: none;
       }
 
-      .note {
-        margin-top: 18px;
-        color: var(--muted);
-        font-size: 14px;
+      .paper-toggle {
+        min-height: 30px;
+        border: 1px solid var(--line);
+        padding: 3px 10px;
+        color: var(--accent-dark);
+        background: var(--paper);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .paper-toggle:hover,
+      .paper-toggle[aria-expanded="true"] {
+        border-color: var(--accent);
+      }
+
+      .paper-panel {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 14px;
+        padding: 16px;
+        border: 1px solid #eceff3;
+        background: var(--soft);
+      }
+
+      .paper-panel.is-open { display: grid; }
+      .paper-panel h3 { margin-bottom: 6px; font-size: 15px; }
+      .paper-panel p { margin-bottom: 10px; }
+      .paper-panel ul { margin: 0; padding-left: 18px; }
+
+      .figure-card { display: grid; gap: 10px; }
+
+      .paper-figure {
+        width: 100%;
+        height: 420px;
+        border: 1px solid var(--line);
+        object-fit: contain;
+        background: var(--paper);
+      }
+
+      img.paper-figure {
+        display: block;
+        padding: 8px;
       }
 
       .plain-list li {
@@ -297,18 +281,11 @@
       .plain-list li::before {
         position: absolute;
         left: 0;
-        color: var(--accent);
-        content: "";
+        top: 0.72em;
         width: 6px;
         height: 6px;
-        top: 0.72em;
         background: var(--accent);
-      }
-
-      .contact-box {
-        padding: 22px;
-        border: 1px solid var(--line);
-        background: var(--soft);
+        content: "";
       }
 
       .site-footer {
@@ -319,6 +296,9 @@
         font-size: 14px;
       }
 
+      .footer-links { margin: 0 0 6px; }
+      .footer-note { margin: 0; }
+
       @media (max-width: 760px) {
         .nav {
           align-items: flex-start;
@@ -328,7 +308,7 @@
 
         .hero,
         .section-grid,
-        .facts {
+        .paper-panel {
           grid-template-columns: 1fr;
         }
 
@@ -337,198 +317,201 @@
           padding-top: 36px;
         }
 
-        h1 {
-          font-size: 34px;
-        }
-
-        .portrait {
-          width: 142px;
-        }
+        h1 { font-size: 34px; }
+        .portrait { width: min(260px, 100%); }
+        .pub-row, .entry { grid-template-columns: 1fr; }
+        .paper-toggle { justify-self: start; }
+        .paper-figure { height: 280px; }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
       <div class="nav">
-        <a class="brand" href="#top">Jiace Zhu</a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#honors">Honors</a>
-          <a href="#misc">Misc</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <a class="brand" href="#top" id="brand"></a>
+        <nav class="nav-links" id="nav-links" aria-label="Primary navigation"></nav>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">Ph.D. Student · Shanghai Jiao Tong University</p>
-          <h1 id="page-title">Jiace Zhu <span lang="zh-Hans">朱嘉策</span></h1>
-          <p class="lead">
-            I am a Ph.D. student at Global College, Shanghai Jiao Tong University, advised by Prof. An Zou in the Efficient Computing Hardware and System Lab. I received my B.E. degree in Computer Science and Technology from Tongji University in 2024.
-          </p>
-          <p class="lead">
-            My research lies in efficient AI systems and hardware-aware computing, with a focus on LLM-driven GPU programming, efficient LLM inference, real-time scheduling on heterogeneous architectures, and neural network compression for resource-constrained deployment.
-          </p>
-          <div class="links" aria-label="Profile links">
-            <a class="button primary" href="mailto:zhujiace@sjtu.edu.cn">Email</a>
-            <a class="button" href="https://github.com/zhujiace/">GitHub</a>
-            <a class="button" href="https://scholar.google.com/citations?user=91nlQ9kAAAAJ">Google Scholar</a>
-            <a class="button" href="https://www.linkedin.com/in/jiace-zhu-371545320/">LinkedIn</a>
-          </div>
-        </div>
-        <div class="portrait" aria-hidden="true">
-          <span>JZ</span>
-        </div>
-      </section>
-
-      <section id="about" aria-labelledby="about-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">About</p>
-            <p class="section-kicker">Academic profile</p>
-          </div>
-          <div>
-            <h2 id="about-title">Research And Education</h2>
-            <p>
-              I work on the boundary between machine learning systems, programming models, and computer architecture. My recent projects study how large language models generate and optimize CUDA kernels, how inference can be made faster through path-level consistency, and how scheduling or compression methods can improve efficiency on constrained or heterogeneous platforms.
-            </p>
-            <dl class="facts">
-              <div class="fact">
-                <dt>Affiliation</dt>
-                <dd>Global College, Shanghai Jiao Tong University</dd>
-              </div>
-              <div class="fact">
-                <dt>Advisor</dt>
-                <dd>Prof. An Zou</dd>
-              </div>
-              <div class="fact">
-                <dt>Lab</dt>
-                <dd>Efficient Computing Hardware and System Lab</dd>
-              </div>
-              <div class="fact">
-                <dt>Education</dt>
-                <dd>B.E., Computer Science and Technology, Tongji University, 2024</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section id="publications" aria-labelledby="publications-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">Publications</p>
-            <p class="section-kicker">Selected work</p>
-          </div>
-          <div>
-            <h2 id="publications-title">Papers</h2>
-            <ul class="pub-list">
-              <li class="publication">
-                <div class="pub-title">CUDABench: Benchmarking LLMs for Text-to-CUDA Generation</div>
-                <div class="authors"><strong>Jiace Zhu</strong>, Wentao Chen, Qi Fan, Zhixing Ren, Junying Wu, Xing Zhe Chai, Chotiwit Rungrueangwutthinon, Yehan Ma, and An Zou</div>
-                <div class="venue">arXiv, 2026</div>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2603.02236">Paper</a>
-                  <a href="https://github.com/CUDA-Bench/CUDABench">Code</a>
-                </div>
-              </li>
-              <li class="publication">
-                <div class="pub-title">CUDA-LLM: LLMs Can Write Efficient CUDA Kernels</div>
-                <div class="authors">Wentao Chen, <strong>Jiace Zhu</strong>, Qi Fan, Yehan Ma, and An Zou</div>
-                <div class="venue">arXiv, 2025</div>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2506.09092">Paper</a>
-                </div>
-              </li>
-              <li class="publication">
-                <div class="pub-title">Path-Consistency with Prefix Enhancement for Efficient Inference in LLMs</div>
-                <div class="authors"><strong>Jiace Zhu</strong>, Yuanzhe Huang, Yingtao Shen, Jie Zhao, and An Zou</div>
-                <div class="venue">arXiv, 2024</div>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2409.01281">Paper</a>
-                </div>
-              </li>
-              <li class="publication">
-                <div class="pub-title">RTHeter: Simulating Real-Time Scheduling of Multiple Tasks on Heterogeneous Architectures</div>
-                <div class="authors">Yinchen Ni, <strong>Jiace Zhu</strong>, Yier Jin, and An Zou</div>
-                <div class="venue">DATE, 2025</div>
-                <div class="pub-links">
-                  <a href="https://dblp.org/rec/conf/date/NiZJZ25">DBLP</a>
-                  <a href="https://sites.gc.sjtu.edu.cn/zouan/research/real-time-computing-on-gpu-fpga-heterogeneous-architectures/real-time-computing-on-gpu-fpga-heterogeneous-architectures-demos/">Project</a>
-                </div>
-              </li>
-              <li class="publication">
-                <div class="pub-title">Compression Space Search: RL-Based Combinational Compression for Neural Networks</div>
-                <div class="authors">Yingtao Shen, Yinchen Ni, <strong>Jiace Zhu</strong>, Jie Zhao, and An Zou</div>
-                <div class="venue">DATE, 2026</div>
-                <div class="pub-links">
-                  <a href="https://sites.gc.sjtu.edu.cn/zouan/research/embedded-ai-systems/embedded-ai-system-papers/">Lab</a>
-                </div>
-              </li>
-            </ul>
-            <p class="note">
-              Paper and code links are included only where the title and author list can be matched to Jiace Zhu with public sources.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="honors" aria-labelledby="honors-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">Honors</p>
-            <p class="section-kicker">Awards</p>
-          </div>
-          <div>
-            <h2 id="honors-title">Honors And Awards</h2>
-            <ul class="plain-list">
-              <li>ESWEEK 2025 Embedded System Software Competition third prize.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="misc" aria-labelledby="misc-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">Misc</p>
-            <p class="section-kicker">Earlier activities</p>
-          </div>
-          <div>
-            <h2 id="misc-title">Competitions</h2>
-            <ul class="plain-list">
-              <li>Physics: second prize in the Chinese Physics Olympiad provincial contest; second prize in the Shanghai division of the National College Student Physics Competition.</li>
-              <li>Intelligent vehicle: national second prize in the Baidu Intelligent Transportation creative group of the National University Student Intelligent Car Race.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" aria-labelledby="contact-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <p class="section-kicker">Get in touch</p>
-          </div>
-          <div class="contact-box">
-            <h2 id="contact-title">Links</h2>
-            <p>Email: <a href="mailto:zhujiace@sjtu.edu.cn">zhujiace@sjtu.edu.cn</a></p>
-            <div class="links">
-              <a class="button" href="https://github.com/zhujiace/">GitHub</a>
-              <a class="button" href="https://scholar.google.com/citations?user=91nlQ9kAAAAJ">Google Scholar</a>
-              <a class="button" href="https://www.linkedin.com/in/jiace-zhu-371545320/">LinkedIn</a>
-              <a class="button" href="https://dblp.org/pid/386/8010.html">DBLP</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="hero" id="hero" aria-labelledby="page-title"></section>
+      <section id="about" aria-labelledby="about-title"></section>
+      <section id="publications" aria-labelledby="publications-title"></section>
+      <section id="honors" aria-labelledby="honors-title"></section>
+      <section id="misc" aria-labelledby="misc-title"></section>
     </main>
 
     <footer class="site-footer">
-      Last updated April 2026 · © Jiace Zhu
+      <p class="footer-links" id="footer-links"></p>
+      <p class="footer-note" id="footer-note"></p>
     </footer>
+
+    <script>
+      const el = (tag, className, text) => {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+      };
+
+      const link = (item, className) => {
+        const node = el("a", className, item.label);
+        node.href = item.href;
+        return node;
+      };
+
+      const renderSectionShell = (section, titleId) => {
+        const grid = el("div", "section-grid");
+        const aside = el("div");
+        aside.append(el("p", "eyebrow", section.eyebrow), el("p", "section-kicker", section.kicker));
+        const content = el("div");
+        const title = el("h2", "", section.title || section.educationTitle);
+        title.id = titleId;
+        content.append(title);
+        grid.append(aside, content);
+        return { grid, content };
+      };
+
+      const renderEntries = (items) => {
+        const list = el("ul", "entry-list");
+        items.forEach((item) => {
+          const li = el("li", "entry");
+          const text = el("div");
+          text.append(el("p", "entry-title", item.title));
+          item.meta.forEach((line) => text.append(el("p", "entry-meta", line)));
+          li.append(text, el("span", "entry-time", item.time));
+          list.append(li);
+        });
+        return list;
+      };
+
+      const renderAuthors = (authors) => {
+        const container = el("div", "authors");
+        authors.forEach((author, index) => {
+          if (index > 0) container.append(document.createTextNode(index === authors.length - 1 ? ", and " : ", "));
+          container.append(author.self ? el("strong", "", author.name) : document.createTextNode(author.name));
+        });
+        return container;
+      };
+
+      const renderFigure = (figure) => {
+        const card = el("div", "figure-card");
+        if (figure.type === "image") {
+          const image = el("img", "paper-figure");
+          image.src = figure.src;
+          image.alt = figure.alt;
+          card.append(image);
+        } else {
+          const object = el("object", "paper-figure");
+          object.data = figure.src;
+          object.type = "application/pdf";
+          object.setAttribute("aria-label", figure.alt);
+          card.append(object);
+        }
+        return card;
+      };
+
+      const wirePaperToggles = (labels) => {
+        document.querySelectorAll(".paper-toggle").forEach((button) => {
+          button.addEventListener("click", () => {
+            const panel = document.getElementById(button.getAttribute("aria-controls"));
+            const isOpen = button.getAttribute("aria-expanded") === "true";
+            button.setAttribute("aria-expanded", String(!isOpen));
+            button.textContent = isOpen ? labels.detailsLabel : labels.hideLabel;
+            panel.classList.toggle("is-open", !isOpen);
+          });
+        });
+      };
+
+      const renderSite = (data) => {
+        document.title = data.site.title;
+        document.querySelector("meta[name='description']").setAttribute("content", data.site.description);
+        document.getElementById("brand").textContent = data.site.brand;
+
+        const nav = document.getElementById("nav-links");
+        data.site.nav.forEach((item) => nav.append(link(item)));
+
+        const hero = document.getElementById("hero");
+        const heroText = el("div");
+        heroText.append(el("p", "eyebrow", data.profile.eyebrow));
+        const name = el("h1");
+        name.id = "page-title";
+        name.append(document.createTextNode(`${data.profile.name} `));
+        const chineseName = el("span", "", data.profile.chineseName);
+        chineseName.lang = "zh-Hans";
+        name.append(chineseName);
+        heroText.append(name);
+        data.profile.bio.forEach((line) => heroText.append(el("p", "lead", line)));
+        const profileLinks = el("div", "links");
+        profileLinks.setAttribute("aria-label", "Profile links");
+        data.profile.links.forEach((item) => profileLinks.append(link(item, item.primary ? "button primary" : "button")));
+        heroText.append(profileLinks);
+        const portrait = el("img", "portrait");
+        portrait.src = data.profile.portrait.src;
+        portrait.alt = data.profile.portrait.alt;
+        hero.append(heroText, portrait);
+
+        const about = renderSectionShell(data.about, "about-title");
+        about.content.append(renderEntries(data.about.education));
+        about.content.append(el("h2", "", data.about.internshipTitle));
+        about.content.append(renderEntries(data.about.internships));
+        document.getElementById("about").append(about.grid);
+
+        const pubs = renderSectionShell(data.publications, "publications-title");
+        const pubList = el("ul", "pub-list");
+        data.publications.items.forEach((paper) => {
+          const item = el("li", "publication");
+          const row = el("div", "pub-row");
+          const summary = el("div");
+          summary.append(el("div", "pub-title", paper.title), renderAuthors(paper.authors), el("div", "venue", paper.venue));
+          const links = el("div", "pub-links");
+          paper.links.forEach((paperLink) => links.append(link(paperLink)));
+          summary.append(links);
+          const button = el("button", "paper-toggle", data.publications.detailsLabel);
+          button.type = "button";
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("aria-controls", `paper-${paper.id}`);
+          row.append(summary, button);
+
+          const panel = el("div", "paper-panel");
+          panel.id = `paper-${paper.id}`;
+          const detailText = el("div");
+          detailText.append(el("h3", "", paper.detail.heading), el("p", "", paper.detail.summary));
+          const points = el("ul");
+          paper.detail.points.forEach((point) => points.append(el("li", "", point)));
+          detailText.append(points);
+          panel.append(detailText, renderFigure(paper.detail.figure));
+          item.append(row, panel);
+          pubList.append(item);
+        });
+        pubs.content.append(pubList);
+        document.getElementById("publications").append(pubs.grid);
+
+        ["honors", "misc"].forEach((key) => {
+          const section = renderSectionShell(data[key], `${key}-title`);
+          const list = el("ul", "plain-list");
+          data[key].items.forEach((item) => list.append(el("li", "", item)));
+          section.content.append(list);
+          document.getElementById(key).append(section.grid);
+        });
+
+        const footerLinks = document.getElementById("footer-links");
+        data.footerLinks.forEach((item, index) => {
+          if (index > 0) footerLinks.append(document.createTextNode(" | "));
+          footerLinks.append(link(item));
+        });
+        document.getElementById("footer-note").textContent = data.site.footerNote;
+
+        wirePaperToggles(data.publications);
+      };
+
+      fetch("data/site.json")
+        .then((response) => response.json())
+        .then(renderSite)
+        .catch((error) => {
+          document.getElementById("hero").textContent = "Unable to load site data.";
+          console.error(error);
+        });
+    </script>
   </body>
 </html>
